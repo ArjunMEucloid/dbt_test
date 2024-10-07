@@ -1,0 +1,12 @@
+sources:
+  - name: chatbot_data
+    database: chatbot_poc
+    schema: chatbot_data
+    tables:
+      - name: dim_customer
+      - name: dim_time
+      - name: dim_trans
+      - name: dim_item
+      - name: dim_store
+      - name: fact_table
+      - name: stg_fact
