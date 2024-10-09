@@ -40,14 +40,14 @@ semantic_models:
       - name: order_total
         description: The total amount for each order including taxes.
         agg: sum
-        expr: amount
+        expr: total_price
       - name: order_count
         expr: 1
         agg: sum
       - name: customers_with_orders
         description: Distinct count of customers placing orders
         agg: count_distinct
-        expr: customer_id
+        expr: customer_key
 metrics: 
   # Simple type metrics
   - name: "order_total"
