@@ -1,0 +1,11 @@
+models:
+  - name: metricflow_time_spine
+    description: "Time spine table for MetricFlow with daily grain"
+    config:
+      materialized: table  # or view depending on your needs
+    columns:
+      - name: date_day  # Change based on your actual column names
+        description: "The primary date column for daily grain"
+        tests:
+          - unique
+          - not_null
