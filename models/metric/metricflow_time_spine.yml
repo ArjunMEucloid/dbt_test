@@ -1,11 +1,8 @@
 models:
   - name: metricflow_time_spine
     description: "Time spine table for MetricFlow with daily grain"
-    config:
-      materialized: table  # or view depending on your needs
+    time_spine:
+      standard_granularity_column: date_day # column for the standard grain of your table
     columns:
-      - name: date_day  # Change based on your actual column names
-        description: "The primary date column for daily grain"
-        tests:
-          - unique
-          - not_null
+      - name: date_day
+        granularity: day # set granularity at column-level for standard_granularity_column
