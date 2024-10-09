@@ -1,0 +1,66 @@
+semantic_models:
+  - name: fact_mdl
+    defaults:
+      agg_time_dimension: date
+    description: |
+      Order fact table. This table’s grain is one row per order.
+    model: ref('silver_fact')
+    
+
+    entities:
+      - name: fact_id
+        type: primary
+        
+      - name: customer_key
+        expr: customer_id
+        type: foreign
+       
+      - name: payment_key
+        expr: payment_id
+        type: foreign
+        
+      - name: time_key
+        expr: time_id
+        type: foreign
+        
+      - name: item_key
+        expr: item_id
+        type: foreign
+        
+      - name: store_key
+        expr: store_id
+        type: foreign
+    
+    dimensions:   
+      - name: date
+        type: time
+        type_params:
+          time_granularity: day
+    measures:     
+      - name: order_total
+        description: The total amount for each order including taxes.
+        agg: sum
+        expr: amount
+      - name: order_count
+        expr: 1
+        agg: sum
+      - name: customers_with_orders
+        description: Distinct count of customers placing orders
+        agg: count_distinct
+        expr: customer_id
+metrics: 
+  # Simple type metrics
+  - name: "order_total"
+    description: "Sum of orders value"
+    type: simple
+    label: "order_total"
+    type_params:
+      measure:
+        name: order_total
+  - name: "order_count"
+    description: "number of orders"
+    type: simple
+    label: "order_count"
+    type_params:
+      measure:
+        name: order_count  
