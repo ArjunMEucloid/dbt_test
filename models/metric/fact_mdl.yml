@@ -12,23 +12,23 @@ semantic_models:
         type: primary
         
       - name: customer_key
-        expr: customer_id
+        expr: customer_key
         type: foreign
        
       - name: payment_key
-        expr: payment_id
+        expr: payment_key
         type: foreign
         
       - name: time_key
-        expr: time_id
+        expr: time_key
         type: foreign
         
       - name: item_key
-        expr: item_id
+        expr: item_key
         type: foreign
         
       - name: store_key
-        expr: store_id
+        expr: store_key
         type: foreign
     
     dimensions:   
