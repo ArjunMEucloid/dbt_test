@@ -37,9 +37,9 @@ semantic_models:
         type_params:
           time_granularity: day
 
-      - name: dim_store
+      - name: dim_store_distict
         type: categorical
-        expr: store_key
+        expr: district
 
     measures:     
       - name: order_total
