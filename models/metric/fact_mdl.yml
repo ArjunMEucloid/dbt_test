@@ -58,9 +58,13 @@ semantic_models:
     description: "Customers dimension table"
     model: ref('stg_customer')
     entities:
-      - name: customer_key
+      - name: dim_customer_key
         type: PRIMARY
         expr: customer_key
+      - name: nid_customer
+        type: unique
+        expr: nid
+
 
 metrics: 
   # Simple type metrics
