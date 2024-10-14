@@ -12,7 +12,7 @@ semantic_models:
         type: primary
         
       - name: customer_key
-        expr: customer_key
+        expr: ref('stg_customer')
         type: foreign
        
       - name: payment_key
