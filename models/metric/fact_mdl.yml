@@ -36,6 +36,11 @@ semantic_models:
         type: time
         type_params:
           time_granularity: day
+
+      - name: dim_store
+        type: categorical
+        expr: store_key
+
     measures:     
       - name: order_total
         description: The total amount for each order including taxes.
