@@ -64,6 +64,11 @@ semantic_models:
       - name: nid_customer
         type: unique
         expr: nid
+        
+    dimensions:
+      - name: nid_dim
+        type: categorical
+        expr: nid
 
 
 metrics: 
