@@ -5,33 +5,31 @@ semantic_models:
     description: |
       Order fact table. This table’s grain is one row per order.
     model: ref('silver_fact')
-    
-
     entities:
       - name: fact_id
         type: primary
-        
+
       - name: customer_key
         expr: ref('stg_customer')
         type: foreign
-       
+
       - name: payment_key
         expr: payment_key
         type: foreign
-        
+
       - name: time_key
         expr: time_key
         type: foreign
-        
+
       - name: item_key
         expr: item_key
         type: foreign
-        
+
       - name: store_key
         expr: store_key
         type: foreign
-    
-    dimensions:   
+
+    dimensions:
       - name: date
         type: time
         type_params:
@@ -41,7 +39,7 @@ semantic_models:
         type: categorical
         expr: district
 
-    measures:     
+    measures:
       - name: order_total
         description: The total amount for each order including taxes.
         agg: sum
@@ -61,17 +59,13 @@ semantic_models:
       - name: dim_customer_key
         type: PRIMARY
         expr: customer_key
-      - name: nid_customer
-        type: unique
-        expr: nid
-        
     dimensions:
-      - name: nid_dim
-        type: categorical
+      - name: nid
         expr: nid
+        type: categorical
+        description: "nid from customer"
 
-
-metrics: 
+metrics:
   # Simple type metrics
   - name: "order_total"
     description: "Sum of orders value"
@@ -80,10 +74,11 @@ metrics:
     type_params:
       measure:
         name: order_total
+
   - name: "order_count"
     description: "number of orders"
     type: simple
     label: "order_count"
     type_params:
       measure:
-        name: order_count  
+        name: order_count
