@@ -3,7 +3,7 @@ dbt_test:
   outputs:
     dev:
       type: databricks
-      host:dbc-6e076fbc-a34a.cloud.databricks.com
+      host: dbc-6e076fbc-a34a.cloud.databricks.com
       http_path: /sql/1.0/warehouses/bf591fbe703288b3
       catalog: chatbot_poc
       schema: chatbot_data
