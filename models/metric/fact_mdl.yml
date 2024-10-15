@@ -66,26 +66,19 @@ semantic_models:
         description: "nid from customer"
 
 metrics:
-  - name: revenue
+  # Simple type metrics
+  - name: "order_total"
     description: "Sum of orders value"
     type: simple
-    label: Revenue
+    label: "order_total"
     type_params:
       measure:
         name: order_total
 
-  - name: sale_count
+  - name: "order_count"
     description: "number of orders"
     type: simple
-    label: Order Count
+    label: "order_count"
     type_params:
       measure:
         name: order_count
-
-  - name: customers_with_orders
-    description: "Distinct count of customers placing orders"
-    type: simple
-    label: customers_with_orders
-    type_params:
-      measure:
-        name: customers_with_orders
