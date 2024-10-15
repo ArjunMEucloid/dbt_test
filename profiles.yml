@@ -3,8 +3,8 @@ dbt_test:
   outputs:
     dev:
       type: databricks
-      host: dbc-6e076fbc-a34a.cloud.databricks.com
-      http_path: /sql/1.0/warehouses/1b5ca251c59d6ee6
+      host:dbc-6e076fbc-a34a.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/bf591fbe703288b3
       catalog: chatbot_poc
       schema: chatbot_data
-      token: dapi6ae95d5b2a568090cd558beda533731b
+      token: dapi569fa423c516af9adb51636dd34f2e2f
